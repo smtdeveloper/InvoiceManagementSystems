@@ -1,0 +1,132 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.User
+
+@{
+    ViewBag.Title = "UserUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="text-center">Kullanıcı Güncelle</h1>
+<br />
+
+@using (Html.BeginForm("UserUpdated", "User", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col"><a href="/User/Index" class="btn btn-outline-primary"> Listeye Dön </a></th>
+                    <th> </th>
+                    <th>
+                        @Html.Label("Pasif Yap")
+                        @Html.CheckBoxFor(x => x.IsDelete, new { @class = "form-control" })
+                    </th>
+                    
+
+                </tr>
+                <tr>
+                   
+                    <th scope="col">
+
+                       
+
+                        @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
+
+                        @Html.Label("İsim")
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Soy isim")
+                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                    </th>
+
+
+
+
+
+                </tr>
+                <tr>
+                    <th scope="col">
+                        @Html.Label("Email")
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Sifre")
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="col">
+                        @Html.Label("TcNo")
+                        @Html.TextBoxFor(x => x.TCNo, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Telefon")
+                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                    </th>
+
+                </tr>
+                <tr>
+                    <th scope="col">
+                        @Html.Label("Resim Yolu")
+                        @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Arac Plakası")
+                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Ev Sahibi")
+                        @Html.CheckBoxFor(x => x.ApartmentOwner, new { @class = "form-control" })
+                    </th>
+                </tr>
+                <tr>
+                </tr>
+                <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th> </tr>
+
+
+            </thead>
+        </table>
+
+
+    </div>
+}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function deleteUser(id) {
+        console.log(id)
+        Swal.fire({
+            title: 'Emin misiniz !',
+            text: "Kullanıcıyı silmek istediğinize emin misiniz ?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Evet, SİL',
+            cancelButtonText: "Vazgeç",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "post",
+                    url: "/User/UserDelete/" + id,
+                    success: function (func) {
+                        Swal.fire(
+                            'SİLİNDİ ! ',
+                            'Mesaj başarılı bir şekilde silindi.',
+                            'success'
+                        )
+                        setTimeout('', 3000);
+                        location.reload();
+                    }
+                }
+                )
+            }
+        })
+    }
+</script>
+
+
+

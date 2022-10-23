@@ -1,0 +1,57 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<User>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="text-lg-center mt-4 " > - SMT Konut Sakinleri - </h1>
+
+<a href="/User/UserAdd" class="btn btn-primary p-3 m-4 text-right"> Yeni Kullanıcı Ekle </a>
+
+
+<table class="table table-hover mt-4">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">İsim</th>
+            <th scope="col">Soy isim</th>
+            <th scope="col">Email</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Daire No</th>
+            <th scope="col"> Güncelle</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.UserId</th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>
+
+                    @if (item.ApartmentOwner)
+                    {
+                        <h6> Ev Sahibi </h6>
+                    }
+                    else
+                    {
+                        <h6>Kiracı</h6>
+                    }
+
+                </td>
+                <td> </td>
+                <td> <a href="/User/UserUpdate/@item.UserId" class="btn btn-warning"> Güncelle </a> </td>
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
