@@ -1,0 +1,60 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.Apartment
+
+@{
+    ViewBag.Title = "ApartmentUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/Apartment/Index">Daireler</a>  /  Daire Güncelleme    </li>
+</ol>
+
+
+<br />
+
+
+@using (Html.BeginForm("ApartmentUpdate", "Apartment", FormMethod.Post))
+{
+    
+    <br />
+    <div class="form-group">
+
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col"><a href="/Apartment/Index" class="btn btn-outline-primary">Daire  Listesine Dön </a></th>
+                    @Html.HiddenFor(x => x.ApartmentId)
+                    @Html.HiddenFor(x => x.ApartmentNo)
+                    @Html.HiddenFor(x => x.Floor)
+                    @Html.HiddenFor(x => x.ApartmentBlock)
+                    @Html.HiddenFor(x => x.HomeType)
+                </tr>
+                <tr>
+
+                    <th scope="col">
+                        @Html.Label("User Id")
+                        @Html.TextBoxFor(x => x.UserId, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Durumu")
+                        @Html.CheckBoxFor(x => x.Status, new { @class = "form-control" })
+                    </th>
+                    <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+                </tr>
+
+                <tr>   </tr>
+
+
+            </thead>
+        </table>
+
+
+
+
+
+    </div>
+}
+
+
+
+

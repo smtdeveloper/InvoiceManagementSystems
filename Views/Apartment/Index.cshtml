@@ -1,0 +1,78 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<FaturaYönetimSistemleri.Models.Entities.Apartment>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/Apartment/Index">Daireler</a>      </li>
+</ol>
+
+
+
+
+
+<div class="row col-12 container">
+    @foreach (var item in Model)
+    {
+       
+        <div class="border-primary card l-bg-cherry col-lg-5 m-4 p-4">
+            <div class="card-statistic-3 p-4">
+                <div class="card-icon card-icon-large"><i class="fas fa-home"></i> <B class="text-primary">    @item.ApartmentBlock BLOK  </B>     </div>
+                <div class="card-icon card-icon-large text-right "><i class="fas fa-circle"></i> <B>    @item.HomeType </B>    </div>
+                <div class="m-4">
+
+                    <h5 class="card-title mb-0"> Kat :  @item.Floor</h5>
+                    <h5 class="card-title mb-0"> Daire No :  @item.ApartmentNo</h5>
+                </div>
+                <div class="col-12">
+                    @if (item.Status)
+                    {
+                        <h5 class="alert-success text-center"> Dolu <BR />  user id : @item.UserId</h5> }
+                    else
+                    {
+                <h5 class="alert-secondary text-center"> Boş  @item.UserId </h5>
+
+                    }
+                </div>
+                <div class="row align-items-center mb-2 d-flex">
+                    <div class="col-6">
+                        <a href="/Apartment/ApartmentDetay/@item.ApartmentId" class="btn btn-outline-primary"> Detay </a>
+                    </div>
+                    <div class="col-6 text-right">
+
+
+
+
+                        <a href="/Apartment/ApartmentUpdate/@item.ApartmentId" class="btn btn-warning"> Güncelle </a>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
+<br />
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center pagination-lg">
+
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions
+        {
+           LiElementClasses = new List<String>
+           { "page-link"}
+        })
+
+    </ul>
+</nav>
+

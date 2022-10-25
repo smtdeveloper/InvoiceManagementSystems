@@ -1,0 +1,73 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<Apartment>
+
+
+@{
+    ViewBag.Title = "UserDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/User/Index">Kullanıcılar</a> / @ViewBag.VuserName </li>
+</ol>
+
+
+
+<section >
+    <div class="h-100">
+        @foreach (var item in Model)
+        {
+
+            <div class="col col-md-9 col-lg-12 col-xl-12">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-4">
+                        <div class="d-flex text-black">
+                            <div class="flex-shrink-0">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                     alt="Generic placeholder image" class="img-fluid"
+                                     style="width: 180px; border-radius: 10px;">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+
+                                <h3 class="mb-0 text-center "> @ViewBag.VuserName</h3>
+                                <BR />
+                                <div class="d-flex justify-content-start rounded-3 p-4 mb-4"
+                                     style="background-color: #efefef;">
+                                    <div>
+                                        <h5 class="text-muted mb-1">Kullanıcı ID</h5>
+                                        <h4 class="m-2 text-center"> @item.UserId</h4>
+                                    </div>
+                                    <div class="px-3">
+                                        <h5 class="text-muted mb-1">Blok</h5>
+                                        <h4 class="m-2 text-center"> @item.ApartmentBlock </h4>
+                                    </div>
+                                    <div>
+                                        <h5 class=" text-muted mb-1"> Kat    </h5>
+                                        <h4 class="m-2 text-center"> @item.Floor </h4>
+                                    </div>
+                                    
+                                    
+                                    <div class="px-3">
+                                        <h5 class="text-muted mb-1">Daire No</h5>
+                                        <h4 class="m-2 text-center"> @item.ApartmentNo </h4>
+                                    </div>
+                                    <div>
+                                        <h5 class=" text-muted mb-1"> Ev Tipi </h5>
+                                        <h4 class="m-2 text-center"> @item.HomeType </h4>
+                                    </div>
+                                </div>
+                                <div class="d-flex pt-1">
+                                    <a href="/User/Index" class="btn btn-outline-primary me-1 flex-grow-1">  Kullanıcı Listesine Dön </a>
+                                    <a href="/User/UserUpdate/@item.UserId" class=" btn btn-warning flex-grow-1"> <B> Güncelle </B>  </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+</section>
+
+

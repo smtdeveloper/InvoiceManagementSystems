@@ -5,7 +5,12 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1 class="text-center">Kullanıcı Güncelle</h1>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/User/Index">Kullanıcılar</a> /  Kullanıcı Güncelle      </li>
+</ol>
+
+
 <br />
 
 @using (Html.BeginForm("UserUpdated", "User", FormMethod.Post))
@@ -16,23 +21,21 @@
         <table class="table table-borderless">
             <thead>
                 <tr>
-                    <th scope="col"><a href="/User/Index" class="btn btn-outline-primary"> Listeye Dön </a></th>
-                    <th> </th>
+                    <th scope="col">
+                        <div class="text-left">
+                            <a href="/User/Index" class="btn btn-primary p-3 m-4">  Kullanıcı Listesine Dön </a>
+                        </div>
+                    </th>
+                    <th> @Html.HiddenFor(x => x.UserId, new { @class = "form-control" }) </th>
                     <th>
                         @Html.Label("Pasif Yap")
                         @Html.CheckBoxFor(x => x.IsDelete, new { @class = "form-control" })
                     </th>
-                    
+
 
                 </tr>
                 <tr>
-                   
                     <th scope="col">
-
-                       
-
-                        @Html.HiddenFor(x => x.UserId, new { @class = "form-control" })
-
                         @Html.Label("İsim")
                         @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
                     </th>
@@ -65,7 +68,6 @@
                         @Html.Label("Telefon")
                         @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
                     </th>
-
                 </tr>
                 <tr>
                     <th scope="col">
@@ -74,20 +76,32 @@
                     </th>
                     <th scope="col">
                         @Html.Label("Arac Plakası")
-                        @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                        @Html.TextBoxFor(x => x.CarsPlate, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+
+                    </th>
+
+                </tr>
+                <tr>
+                    <th scope="col">
+                        @Html.Label("Daire ID")
+                        @Html.TextBoxFor(x => x.ApartmentID, new { @class = "form-control" })
                     </th>
                     <th scope="col">
                         @Html.Label("Ev Sahibi")
                         @Html.CheckBoxFor(x => x.ApartmentOwner, new { @class = "form-control" })
                     </th>
-                </tr>
-                <tr>
+
                 </tr>
                 <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th> </tr>
 
 
             </thead>
         </table>
+
+
+
 
 
     </div>

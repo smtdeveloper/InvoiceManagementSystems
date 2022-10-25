@@ -1,0 +1,168 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<User>
+
+@{
+    ViewBag.Title = "ApartmentDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/Apartment/Index">Daireler</a>  / Daire Detay </li>
+</ol>
+
+<a href="/Apartment/Index" class="btn btn-primary m-4"> <h5> Daire  Listesine Dön  </h5>  </a>
+<section style="background-color: #eee;">
+
+
+    <div class="">
+        @foreach (var item in Model)
+        {
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    @if (item.ApartmentOwner)
+                    {
+                        <h5 class="alert-success text-center p-3"> <i class="fas fa-home"></i> Ev Sahibi : @item.FirstName @item.LastName </h5>
+                    }
+                    else
+                    {
+                        <h5 class="alert-secondary text-center p-3"> <i class="fas fa-home"></i> Kiracı : @item.FirstName @item.LastName </h5>
+                    }
+                </div>
+                <div class="col-lg-5 m-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                                 class="rounded-circle img-fluid" style="width: 150px;">
+                            <h5 class="my-3">@item.FirstName @item.LastName</h5>
+                            <p class="text-muted mb-1">Full Stack Developer</p>
+
+                            <div class="d-flex justify-content-center mb-2">
+                                <a href="/User/UserUpdate/@item.UserId" class="btn btn-warning"> Güncelle </a>
+                            </div>
+
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush rounded-3">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                        <i class="fas fa-globe fa-lg text-warning"></i>
+                                        <p class="mb-0">SMTcoder</p>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                        <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                                        <p class="mb-0">SMTcoder</p>
+                                    </li>
+                                   
+                                    <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                                        <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                                        <p class="mb-0">SMTcoder</p>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6 m-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Ad Soyad</p>
+                                </div>
+                                <div class="col-sm-9 row">
+                                    <p class="text-muted mb-0">@item.FirstName @item.LastName </p>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Kullanıcı ID</p>
+                                </div>
+                                <div class="col-sm-9 row">
+                                    <p class="text-muted mb-0"> @item.UserId </p>
+
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">TC NO</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@item.TCNo</p>
+                                </div>
+                            </div>
+                            <HR />
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@item.Email</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Telefon</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@item.Phone</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Araç Plakları</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@item.CarsPlate</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Durum : </p>
+                                </div>
+                                <div class="col-sm-9">
+                                    @if (item.ApartmentOwner)
+                                    {
+                                        <p class="">  Ev Sahibi  </p>
+                                    }
+                                    else
+                                    {
+                                        <p class=""> Kiracı  </p>
+                                    }
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Oturan kişi sayısı</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> 2 Kişi </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+    </div>
+</section>
+

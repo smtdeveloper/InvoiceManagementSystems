@@ -46,6 +46,17 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+        public ActionResult UserDetay(int id)
+        {
+            var values = c.Apartments.Where(x => x.UserId == id).ToList();
+
+            var userName = c.Users.Where(x => x.UserId == id).Select(y => y.FirstName + " " + y.LastName).FirstOrDefault();
+            ViewBag.VuserName = userName;
+
+            return View(values);
+
+        }
+
         public ActionResult UserUpdate(int id)
         {
             var value = c.Users.Find(id);
@@ -64,12 +75,16 @@ namespace FaturaYönetimSistemleri.Controllers
             value.LastName = user.LastName;
             value.Email = user.Email;
             value.Password = user.Password;
+
             value.TCNo = user.TCNo;
             value.Phone = user.Phone;
+
             value.ImageURL = user.ImageURL;
             value.CarsPlate = user.CarsPlate;
+
             value.ApartmentOwner = user.ApartmentOwner;
             value.IsDelete = user.IsDelete;
+            value.ApartmentID = user.ApartmentID;
 
 
             c.SaveChanges();

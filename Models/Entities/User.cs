@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,7 @@ namespace FaturaYönetimSistemleri.Models.Entities
     {
         [Key]
         public int UserId { get; set; }
+        
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -20,8 +22,10 @@ namespace FaturaYönetimSistemleri.Models.Entities
         public string CarsPlate { get; set; }
         public bool ApartmentOwner { get; set; }
         public bool IsDelete { get; set; }
+        public int ApartmentID { get; set; }
 
-        public virtual ICollection<Apartment> Apartments { get; set; }
+        public virtual ICollection<Apartment> Apartment { get; set; }
+       
         public ICollection<Dues> Dues { get; set; }
         public ICollection<ElectricityBill> ElectricityBill { get; set; }
         public ICollection<WaterBill> WaterBill { get; set; }
