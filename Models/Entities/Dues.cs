@@ -15,6 +15,8 @@ namespace FaturaYönetimSistemleri.Models.Entities
         public string Description { get; set; }
         public bool Status { get; set; } = false;
 
-        public User User { get; set; }
+       // public int UserID { get; set; }
+        public virtual User User { get; set; }
+      
     }
 }

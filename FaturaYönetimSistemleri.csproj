@@ -313,6 +313,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ApartmentController.cs" />
+    <Compile Include="Controllers\DuesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -457,6 +458,7 @@
     <Content Include="Views\Apartment\ApartmentUpdate.cshtml" />
     <Content Include="Views\Apartment\ApartmentDetay.cshtml" />
     <Content Include="Views\User\UserDetay.cshtml" />
+    <Content Include="Views\Dues\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
