@@ -314,8 +314,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ApartmentController.cs" />
     <Compile Include="Controllers\DuesController.cs" />
+    <Compile Include="Controllers\ElectricityBillController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NaturalGasBillController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WaterBillController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -459,6 +462,17 @@
     <Content Include="Views\Apartment\ApartmentDetay.cshtml" />
     <Content Include="Views\User\UserDetay.cshtml" />
     <Content Include="Views\Dues\Index.cshtml" />
+    <Content Include="Views\Dues\DuesUpdate.cshtml" />
+    <Content Include="Views\Dues\DuesAdd.cshtml" />
+    <Content Include="Views\ElectricityBill\Index.cshtml" />
+    <Content Include="Views\NaturalGasBill\Index.cshtml" />
+    <Content Include="Views\WaterBill\Index.cshtml" />
+    <Content Include="Views\ElectricityBill\ElectricityBillAdd.cshtml" />
+    <Content Include="Views\NaturalGasBill\NaturalGasBillAdd.cshtml" />
+    <Content Include="Views\WaterBill\WaterBillAdd.cshtml" />
+    <Content Include="Views\User\UserElectricityBill.cshtml" />
+    <Content Include="Views\User\UserNaturalGasBill.cshtml" />
+    <Content Include="Views\User\UserWaterBill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

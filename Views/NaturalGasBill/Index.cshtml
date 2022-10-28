@@ -1,0 +1,69 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model PagedList.IPagedList<FaturaYönetimSistemleri.Models.Entities.NaturalGasBill>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/NaturalGasBill/Index">Doğal Gas Faturaları </a>      </li>
+</ol>
+
+
+
+
+<table class="table table-hover table-success">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"> Kullanıcı </th>
+            <th scope="col"> Seri No</th>
+            <th scope="col"> Sıra No</th>
+            <th scope="col"> Şirket</th>
+            <th scope="col"> Fiyat</th>
+            <th scope="col"> Tarih</th>
+            <th scope="col"> Acıklama</th>
+            <th scope="col"> Durumu </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.NaturalGasBillID</th>
+                <th scope="row">@item.User.FirstName @item.User.LastName</th>
+                <th scope="row">@item.NaturalGasBillSerialNumber</th>
+                <th scope="row">@item.NaturalGasBillSequenceNo</th>
+                <th scope="row">@item.NaturalGasBillCompanyName</th>
+                <th scope="row">@item.NaturalGasBillPrice TL</th>
+                <th scope="row">@item.NaturalGasBillDate</th>
+                <th scope="row">@item.NaturalGasBilllDescription</th>
+                <th>
+                    @if (item.NaturalGasBillStatus)
+                    {
+                        <h5 class="alert-primary text-center"> Ödendi </h5>
+                    }
+                    else
+                    {
+                        <h5 class="alert-secondary text-center"> Fatura Ödenmedi  </h5>
+
+                    }
+                </th>
+
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+
+

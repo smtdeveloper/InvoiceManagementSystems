@@ -1,0 +1,89 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.ElectricityBill
+
+
+
+@{
+    ViewBag.Title = "ElectricityBillAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/ElectricityBill/Index">Elektrik Faturaları</a> / Yeni Elektrik Faturası Ekle      </li>
+</ol>
+
+<br />
+
+@using (Html.BeginForm("ElectricityBillAdd", "ElectricityBill", FormMethod.Post))
+{
+    <br />
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <div class="text-left">
+                        <a href="/ElectricityBill/Index" class="btn btn-primary p-3 m-4">  Elektrik Faturası Listesine Dön </a>
+                    </div>
+                </th>
+                <th>
+                <th scope="col">
+                    @Html.Label("Ödendi")
+                    @Html.CheckBoxFor(x => x.ElectricityBillStatus, new { @class = "form-control" })
+                </th></th>
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Elektrik Fatura Ücreti ")
+                    @Html.TextBoxFor(x => x.ElectricityBillPrice, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("User ID")
+                    @Html.TextBoxFor(x => x.UserID, new { @class = "form-control" })
+                </th>
+                
+
+
+
+
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Acıklama")
+                    @Html.TextBoxFor(x => x.ElectricityBillDescription, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Tarih ")
+                    @Html.TextBoxFor(x => x.ElectricityBillDate, new { @class = "form-control" })
+                </th>
+
+            </tr>
+
+            <tr>
+                <th scope="col">
+                    @Html.Label("Seri No")
+                    @Html.TextBoxFor(x => x.ElectricityBillSerialNumber, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Sıra No ")
+                    @Html.TextBoxFor(x => x.ElectricityBillSequenceNo, new { @class = "form-control" })
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Şirket Adı ")
+                    @Html.TextBoxFor(x => x.ElectricityBillCompanyName, new { @class = "form-control" })
+                </th>
+                <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+            </tr>
+
+
+            <tr>   </tr>
+
+
+        </thead>
+    </table>
+
+
+
+}

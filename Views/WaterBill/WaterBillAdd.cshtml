@@ -1,0 +1,89 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.WaterBill
+
+
+@{
+    ViewBag.Title = "WaterBillAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/WaterBill/Index">Su Faturaları</a> / Yeni Su Faturası Ekle      </li>
+</ol>
+
+<br />
+
+@using (Html.BeginForm("WaterBillAdd", "WaterBill", FormMethod.Post))
+{
+    <br />
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <div class="text-left">
+                        <a href="/ElectricityBill/Index" class="btn btn-primary p-3 m-4">  Elektrik Faturası Listesine Dön </a>
+                    </div>
+                </th>
+                <th>
+                <th scope="col">
+                    @Html.Label("Ödendi")
+                    @Html.CheckBoxFor(x => x.WaterBillStatus, new { @class = "form-control" })
+                </th></th>
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Su Fatura Ücreti ")
+                    @Html.TextBoxFor(x => x.WaterBillPrice, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("User ID")
+                    @Html.TextBoxFor(x => x.UserID, new { @class = "form-control" })
+                </th>
+
+
+
+
+
+
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Acıklama")
+                    @Html.TextBoxFor(x => x.WaterBillDescription, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Tarih ")
+                    @Html.TextBoxFor(x => x.WaterBillDate, new { @class = "form-control" })
+                </th>
+
+            </tr>
+
+            <tr>
+                <th scope="col">
+                    @Html.Label("Seri No")
+                    @Html.TextBoxFor(x => x.WaterBillSerialNumber, new { @class = "form-control" })
+                </th>
+                <th scope="col">
+                    @Html.Label("Sıra No ")
+                    @Html.TextBoxFor(x => x.WaterBillSequenceNo, new { @class = "form-control" })
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">
+                    @Html.Label("Şirket Adı ")
+                    @Html.TextBoxFor(x => x.WaterBillCompanyName, new { @class = "form-control" })
+                </th>
+                <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+            </tr>
+
+
+            <tr>   </tr>
+
+
+        </thead>
+    </table>
+
+
+
+}
+

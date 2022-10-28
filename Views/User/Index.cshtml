@@ -24,7 +24,10 @@
             <th scope="col">Soy isim</th>
             <th scope="col">Email</th>
             <th scope="col">Durum</th>
-            <th scope="col">Detay</th>
+            <th scope="col">Daire</th>
+            <th scope="col"></th>
+            <th scope="col">Faturalar</th>
+            <th scope="col"></th>
             <th scope="col"> Güncelle</th>
 
 
@@ -50,7 +53,10 @@
                 }
 
             </td>
-            <td> <a href="/User/UserDetay/@item.UserId" class="btn btn-primary"> Detay </a> </td>
+            <td> <a href="/User/UserDetay/@item.UserId" class="btn btn-primary"> Daire </a> </td>
+            <td> <a href="/User/UserElectricityBill/@item.UserId" class="btn btn-dark"> Elektrik  </a> </td>
+            <td> <a href="/User/UserWaterBill/@item.UserId" class="btn btn-dark"> Su </a> </td>
+            <td> <a href="/User/UserNaturalGasBill/@item.UserId" class="btn btn-dark"> Doğal Gas </a> </td>
             <td> <a href="/User/UserUpdate/@item.UserId" class="btn btn-warning"> Güncelle </a> </td>
 
 

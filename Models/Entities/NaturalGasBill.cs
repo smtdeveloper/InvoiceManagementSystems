@@ -18,6 +18,7 @@ namespace FaturaYönetimSistemleri.Models.Entities
         public string NaturalGasBilllDescription { get; set; }
         public bool NaturalGasBillStatus { get; set; } = false;
 
-        public User User { get; set; }
+        public int UserID { get; set; }
+        public virtual User User { get; set; }
     }
 }

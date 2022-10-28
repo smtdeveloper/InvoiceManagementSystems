@@ -57,6 +57,37 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+        public ActionResult UserElectricityBill(int id)
+        {
+            var values = c.ElectricityBills.Where(x => x.UserID == id).ToList();
+
+            var userName = c.Users.Where(x => x.UserId == id).Select(y => y.FirstName + " " + y.LastName).FirstOrDefault();
+            ViewBag.VuserName = userName;
+
+            return View(values);
+
+        }
+        public ActionResult UserNaturalGasBill(int id)
+        {
+            var values = c.NaturalGasBills.Where(x => x.UserID == id).ToList();
+
+            var userName = c.Users.Where(x => x.UserId == id).Select(y => y.FirstName + " " + y.LastName).FirstOrDefault();
+            ViewBag.VuserName = userName;
+
+            return View(values);
+
+        }
+        public ActionResult UserWaterBill(int id)
+        {
+            var values = c.WaterBills.Where(x => x.UserID == id).ToList();
+
+            var userName = c.Users.Where(x => x.UserId == id).Select(y => y.FirstName + " " + y.LastName).FirstOrDefault();
+            ViewBag.VuserName = userName;
+
+            return View(values);
+
+        }
+
         public ActionResult UserUpdate(int id)
         {
             var value = c.Users.Find(id);

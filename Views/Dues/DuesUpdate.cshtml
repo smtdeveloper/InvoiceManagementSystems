@@ -1,0 +1,67 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.Dues
+
+@{
+    ViewBag.Title = "DuesUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/Dues/Index">Aidatlar</a>  /  Aidat Güncelleme    </li>
+</ol>
+
+
+<br />
+
+
+@using (Html.BeginForm("DuesUpdate", "Dues", FormMethod.Post))
+{
+
+    <br />
+    <div class="form-group">
+
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th scope="col"><a href="/Dues/Index" class="btn btn-outline-primary">Aidat  Listesine Dön </a></th>
+                    @Html.HiddenFor(x => x.DuesID)
+
+                </tr>
+                <tr>
+
+                    <th scope="col">
+                        @Html.Label("Aidat Ücreti")
+                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Tarih")
+                        @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+                    </th>
+
+                </tr>
+                <tr>
+
+                    <th scope="col">
+                        @Html.Label("Acıklama")
+                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                    </th>
+                    <th scope="col">
+                        @Html.Label("Ödendi")
+                        @Html.CheckBoxFor(x => x.Status, new { @class = "form-control" })
+                    </th>
+
+                </tr>
+
+                <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>   </tr>
+
+
+            </thead>
+        </table>
+
+
+
+
+
+    </div>
+}
+
+

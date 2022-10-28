@@ -30,5 +30,65 @@ namespace FaturaYönetimSistemleri.Controllers
             return RedirectToAction("Index");
 
         }
+
+        [HttpGet]
+        public ActionResult DuesUpdate(int id)
+        {
+            var value = c.Dues.Find(id);
+            return View("DuesUpdate", value);
+        }
+
+        [HttpPost]
+        public ActionResult DuesUpdate(Dues dues)
+        {
+            var value = c.Dues.Find(dues.DuesID);
+
+            value.Status = dues.Status;
+            value.Price = dues.Price;
+            value.Description = dues.Description;
+            value.Date = dues.Date;
+            
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+        [HttpGet]
+        public ActionResult DuesAdd()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public ActionResult DuesAdd(Dues dues)
+        {
+
+            c.Dues.Add(dues);
+            c.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult DuesStatus(int id)
+        {
+            var value = c.Dues.Find(id);
+
+            if (value.Status)
+            {
+                value.Status = false;
+            }
+            else
+            {
+                value.Status = true;
+            }
+
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+
     }
 }
