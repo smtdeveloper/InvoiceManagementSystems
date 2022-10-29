@@ -1,5 +1,6 @@
 ﻿using FaturaYönetimSistemleri.Models.DB;
 using FaturaYönetimSistemleri.Models.Entities;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -31,6 +32,14 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult UserAdd()
         {
+            List<SelectListItem> apartments = (from x in c.Apartments.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.ApartmentBlock + " BLOK " +  x.ApartmentNo + " Daire",
+                                                   Value = x.ApartmentId.ToString()
+                                               }).ToList();
+            ViewBag.VDaireler = apartments;
+
             return View();
 
         }
@@ -90,6 +99,14 @@ namespace FaturaYönetimSistemleri.Controllers
 
         public ActionResult UserUpdate(int id)
         {
+            List<SelectListItem> apartments = (from x in c.Apartments.ToList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.ApartmentBlock + " BLOK " + x.ApartmentNo + " Daire",
+                                                   Value = x.ApartmentId.ToString()
+                                               }).ToList();
+            ViewBag.VDaireler = apartments;
+
             var value = c.Users.Find(id);
 
             return View("UserUpdate", value);

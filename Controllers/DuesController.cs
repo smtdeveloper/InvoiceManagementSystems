@@ -34,6 +34,15 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult DuesUpdate(int id)
         {
+            List<SelectListItem> duess = (from x in c.Users.ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.FirstName + "  " + x.LastName,
+                                              Value = x.UserId.ToString()
+                                          }).ToList();
+            ViewBag.VUsers = duess;
+
+
             var value = c.Dues.Find(id);
             return View("DuesUpdate", value);
         }
@@ -56,6 +65,13 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult DuesAdd()
         {
+            List<SelectListItem> users = (from x in c.Users.Where(x => x.IsDelete == false).ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.FirstName + "  " + x.LastName,
+                                              Value = x.UserId.ToString()
+                                          }).ToList();
+            ViewBag.VUsers = users;
             return View();
 
         }

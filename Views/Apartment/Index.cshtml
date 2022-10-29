@@ -35,7 +35,7 @@
                 <div class="col-12">
                     @if (item.Status)
                     {
-                        <h5 class="alert-success text-center"> Dolu <BR />  user id : @item.UserId</h5> }
+                        <h5 class="alert-success text-center"> Dolu <BR />   @item.User.FirstName @item.User.LastName</h5> }
                     else
                     {
                         <h5 class="alert-secondary text-center"> Boş  @item.UserId </h5>
@@ -52,6 +52,11 @@
 
 
                         <a href="/Apartment/ApartmentUpdate/@item.ApartmentId" class="btn btn-warning"> Güncelle </a>
+                        @if (item.Status == true)
+                        {
+                            <a href="/Apartment/ApartmentClear/@item.ApartmentId" class="btn btn-outline-danger"> Daireyi Boşalt </a>
+                        }
+
 
 
 

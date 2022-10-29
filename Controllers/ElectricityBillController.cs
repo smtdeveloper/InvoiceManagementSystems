@@ -35,6 +35,14 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult ElectricityBillAdd()
         {
+            List<SelectListItem> users = (from x in c.Users.Where(x => x.IsDelete == false).ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.FirstName + "  " + x.LastName,
+                                              Value = x.UserId.ToString()
+                                          }).ToList();
+            ViewBag.VUsers = users;
+
             return View();
 
         }

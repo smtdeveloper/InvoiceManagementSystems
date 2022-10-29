@@ -37,10 +37,10 @@
                     @Html.TextBoxFor(x => x.ElectricityBillPrice, new { @class = "form-control" })
                 </th>
                 <th scope="col">
-                    @Html.Label("User ID")
-                    @Html.TextBoxFor(x => x.UserID, new { @class = "form-control" })
+                    @Html.Label("Kullanıcılar")
+                    @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.VUsers, new { @class = "form-control" })
                 </th>
-                
+
 
 
 

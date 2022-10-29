@@ -51,7 +51,13 @@
 
                 </tr>
 
-                <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>   </tr>
+                <tr>
+                    <th scope="col">
+                        @Html.Label("Kullanıcılar")
+                        @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.VUsers, new { @class = "form-control" })
+                    </th>
+                    <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+                </tr>
 
 
             </thead>

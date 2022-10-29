@@ -85,8 +85,8 @@
                 </tr>
                 <tr>
                     <th scope="col">
-                        @Html.Label("Daire ID")
-                        @Html.TextBoxFor(x => x.ApartmentID, new { @class = "form-control" })
+                        @Html.Label("Daireler")
+                        @Html.DropDownListFor(x => x.ApartmentID, (List<SelectListItem>)ViewBag.VDaireler, new { @class = "form-control" })
                     </th>
                     <th scope="col">
                         @Html.Label("Ev Sahibi")

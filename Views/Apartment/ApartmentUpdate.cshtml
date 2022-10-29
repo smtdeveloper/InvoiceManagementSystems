@@ -32,8 +32,8 @@
                 <tr>
 
                     <th scope="col">
-                        @Html.Label("User Id")
-                        @Html.TextBoxFor(x => x.UserId, new { @class = "form-control" })
+                        @Html.Label("Kullanıcılar")
+                        @Html.DropDownListFor(x => x.UserId, (List<SelectListItem>)ViewBag.VUsers, new { @class = "form-control" })
                     </th>
                     <th scope="col">
                         @Html.Label("Durumu")

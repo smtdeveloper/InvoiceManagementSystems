@@ -1,6 +1,7 @@
 ﻿using FaturaYönetimSistemleri.Models.DB;
 using FaturaYönetimSistemleri.Models.Entities;
 using PagedList;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -33,6 +34,16 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult ApartmentUpdate(int id)
         {
+
+            List<SelectListItem> users = (from x in c.Users.Where(x => x.IsDelete == false).ToList()
+                                          select new SelectListItem
+                                          {
+                                              Text = x.FirstName + "  " + x.LastName,
+                                              Value = x.UserId.ToString()
+                                          }).ToList();
+            ViewBag.VUsers = users;
+
+
             var value = c.Apartments.Find(id);
             return View("ApartmentUpdate", value);
         }
@@ -57,5 +68,18 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+        public ActionResult ApartmentClear(int id)
+        {
+            var value = c.Apartments.Find(id);
+
+            
+                value.UserId =  null;
+                value.Status = false;
+
+
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
