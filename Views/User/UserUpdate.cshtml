@@ -84,10 +84,10 @@
 
                 </tr>
                 <tr>
-                    <th scope="col">
+                    @*<th scope="col">
                         @Html.Label("Daireler")
-                        @Html.DropDownListFor(x => x.ApartmentID, (List<SelectListItem>)ViewBag.VDaireler, new { @class = "form-control" })
-                    </th>
+                        @Html.DropDownListFor(x => x.ApartmentId, (List<SelectListItem>)ViewBag.VDaireler, new { @class = "form-control" })
+                    </th>*@
                     <th scope="col">
                         @Html.Label("Ev Sahibi")
                         @Html.CheckBoxFor(x => x.ApartmentOwner, new { @class = "form-control" })

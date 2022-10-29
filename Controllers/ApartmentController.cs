@@ -63,7 +63,7 @@ namespace FaturaYönetimSistemleri.Controllers
 
         public ActionResult ApartmentDetay(int id)
         {
-            var values = c.Users.Where(x => x.ApartmentID == id).ToList();
+            var values = c.Users.Where(x => x.ApartmentId == id).ToList();
             return View(values);
 
         }

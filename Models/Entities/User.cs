@@ -22,7 +22,7 @@ namespace FaturaYönetimSistemleri.Models.Entities
         public string CarsPlate { get; set; }
         public bool ApartmentOwner { get; set; }
         public bool IsDelete { get; set; }
-        public int? ApartmentID { get; set; }
+        public int? ApartmentId { get; set; }
 
         public virtual ICollection<Apartment> Apartment { get; set; }
        

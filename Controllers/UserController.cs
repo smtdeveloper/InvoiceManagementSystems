@@ -132,7 +132,7 @@ namespace FaturaYönetimSistemleri.Controllers
 
             value.ApartmentOwner = user.ApartmentOwner;
             value.IsDelete = user.IsDelete;
-            value.ApartmentID = user.ApartmentID;
+            value.ApartmentId = user.ApartmentId;
 
 
             c.SaveChanges();
