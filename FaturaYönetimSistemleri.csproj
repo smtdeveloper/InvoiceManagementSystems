@@ -316,6 +316,7 @@
     <Compile Include="Controllers\DuesController.cs" />
     <Compile Include="Controllers\ElectricityBillController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\NaturalGasBillController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\WaterBillController.cs" />
@@ -709,6 +710,7 @@
     <Content Include="Views\User\UserElectricityBill.cshtml" />
     <Content Include="Views\User\UserNaturalGasBill.cshtml" />
     <Content Include="Views\User\UserWaterBill.cshtml" />
+    <Content Include="Views\istatistik\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
