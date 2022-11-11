@@ -711,6 +711,7 @@
     <Content Include="Views\User\UserNaturalGasBill.cshtml" />
     <Content Include="Views\User\UserWaterBill.cshtml" />
     <Content Include="Views\istatistik\Index.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
