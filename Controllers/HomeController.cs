@@ -1,30 +1,63 @@
-﻿using System;
+﻿using FaturaYönetimSistemleri.Models.DB;
+using FaturaYönetimSistemleri.Models.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
     public class HomeController : Controller
     {
+        Context c = new Context();
+
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult UserLogin(User user)
         {
-            ViewBag.Message = "Your application description page.";
+            var login = c.Users.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            if (login != null)
+            {
+                FormsAuthentication.SetAuthCookie(login.Email, false);
 
-            return View();
+                Session["UserEmail"] = login.Email.ToString();
+
+                return RedirectToAction("Index", "User");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+          
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult AdminLogin(User user)
         {
-            ViewBag.Message = "Your contact page.";
+            var login = c.Users.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            if (login != null)
+            {
+                FormsAuthentication.SetAuthCookie(login.Email, false);
 
-            return View();
+                Session["UserEmail"] = login.Email.ToString();
+
+                return RedirectToAction("Index", "User");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
         }
+
+
     }
+
 }

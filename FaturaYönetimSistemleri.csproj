@@ -654,6 +654,7 @@
     <Content Include="userTema\images\featured-job\img-8.png" />
     <Content Include="userTema\images\featured-job\img-9.png" />
     <Content Include="userTema\images\google.png" />
+    <Content Include="userTema\images\home.png" />
     <Content Include="userTema\images\how-it-work\img-1.png" />
     <Content Include="userTema\images\how-it-work\img-2.png" />
     <Content Include="userTema\images\how-it-work\img-3.png" />
@@ -663,6 +664,7 @@
     <Content Include="userTema\images\service\img-2.jpg" />
     <Content Include="userTema\images\service\img-3.jpg" />
     <Content Include="userTema\images\service\img-4.jpg" />
+    <Content Include="userTema\images\smt.png" />
     <Content Include="userTema\images\testi\img-1.png" />
     <Content Include="userTema\images\testi\img-2.png" />
     <Content Include="userTema\images\testi\img-3.png" />
@@ -757,8 +759,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Web\.browserslistrc" />
     <Content Include="Web\.travis.yml" />

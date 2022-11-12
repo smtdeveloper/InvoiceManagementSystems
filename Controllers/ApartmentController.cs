@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
+    [Authorize]
     public class ApartmentController : Controller
     {
         Context c = new Context();

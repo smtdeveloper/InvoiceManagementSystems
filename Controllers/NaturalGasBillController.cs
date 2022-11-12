@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
+    [Authorize]
     public class NaturalGasBillController : Controller
     {
 

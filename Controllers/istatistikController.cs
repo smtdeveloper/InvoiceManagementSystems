@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
+    [Authorize]
     public class istatistikController : Controller
     {
         Context c = new Context();
