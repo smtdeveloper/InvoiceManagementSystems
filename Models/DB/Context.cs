@@ -16,6 +16,7 @@ namespace FaturaYönetimSistemleri.Models.DB
         public DbSet<NaturalGasBill> NaturalGasBills { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<WaterBill> WaterBills { get; set; }
+        public DbSet<Todo> Todos { get; set; }
         
     }
 }

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<section class="bg-home">
+
+    <div class="bg-overlay"></div>
+    <div class="home-center">
+
+        <div class="home-desc-center">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+
+                        <div class="title-heading text-center text-white">
+                            <img height="500" width="500" src="~/userTema/images/home.png" />
+                            <img src="~/userTema/images/smt.png" />
+                            <h6 class="small-title text-uppercase text-light mb-3"> SMT konut Kullanıcı Paneli  </h6>
+                            <h1 class="heading font-weight-bold mb-4">Fatura Ödeme Sistemi</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-form-position">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="home-registration-form p-4 mb-3">
+                                <h3 class="text-center text-white-50"> KÜTAHYA / Akkent Mh. </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-title text-center mb-4 pb-2">
+                    <h4 class="title title-line pb-5">  Faturalarım  </h4>
+                    <p class="text-muted para-desc mx-auto mb-1">  Aidatlar Her Ayın 1' inde ödenir ! Faturalar her ay yenilenir. <br /> İnternet Alt yapısı yakında ekleneecek.  </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <a href="javascript:void(0)">
+                    <div class="popu-category-box bg-light rounded text-center p-4">
+                        <div class="popu-category-icon mb-3">
+                            <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
+                        </div>
+                        <div class="popu-category-content">
+                            <h5 class="mb-2 text-dark title">Elektrik Faturalarım</h5>
+                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2"  >  Hemen ÖDE </B>  </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <a href="javascript:void(0)">
+                    <div class="popu-category-box bg-light rounded text-center p-4">
+                        <div class="popu-category-icon mb-3">
+                            <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
+                        </div>
+                        <div class="popu-category-content">
+                            <h5 class="mb-2 text-dark title">Su Faturalarım</h5>
+                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2">  Hemen ÖDE </B>  </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <a href="javascript:void(0)">
+                    <div class="popu-category-box bg-light rounded text-center p-4">
+                        <div class="popu-category-icon mb-3">
+                            <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
+                        </div>
+                        <div class="popu-category-content">
+                            <h5 class="mb-2 text-dark title">Doğal Gas Faturalarım</h5>
+                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2">  Hemen ÖDE </B>  </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-6 mt-4 pt-2">
+                <a href="javascript:void(0)">
+                    <div class="popu-category-box bg-light rounded text-center p-4">
+                        <div class="popu-category-icon mb-3">
+                            <i class="mdi mdi-office-building d-inline-block rounded-pill h3 text-primary"></i>
+                        </div>
+                        <div class="popu-category-content">
+                            <h5 class="mb-2 text-dark title"> Aidatlarım </h5>
+                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2">  Hemen ÖDE </B>  </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mt-4 pt-2">
+                <a href="javascript:void(0)" class="btn btn-primary-outline">  Bizimle iletişime Geçin   <i class="mdi mdi-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- counter start -->
+<section class="section bg-counter position-relative" style="background: url('images/bg-counters.jpg') center center;">
+    <div class="bg-overlay bg-overlay-gradient"></div>
+    <div class="container">
+        <h1 class="text-center"> Toplam Ödenen Fatularım </h1>
+        <div class="row" id="counter">
+
+            <hr />
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-left counter-icon mr-3">
+                        <i class="mdi mdi-file-document-box h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="28">1</h1>
+                        <p class="counter-name text-white text-uppercase mb-0"> Elektrik Fatularım </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-left counter-icon mr-3">
+                        <i class="mdi mdi-file-document-box h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="28">1</h1>
+                        <p class="counter-name text-white text-uppercase mb-0"> Su Fatularım </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="home-counter pt-4 pb-4">
+                    <div class="float-left counter-icon mr-3">
+                        <i class="mdi mdi-file-document-box h1 text-white"></i>
+                    </div>
+                    <div class="counter-content overflow-hidden">
+                        <h1 class="counter-value text-white mb-1" data-count="28">1</h1>
+                        <p class="counter-name text-white text-uppercase mb-0">  Dogal Gas Fatularım </p>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <hr />
+
+        </div>
+        
+    </div>
+</section>
+<!-- counter end -->

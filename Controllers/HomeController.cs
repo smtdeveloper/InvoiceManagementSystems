@@ -29,7 +29,7 @@ namespace FaturaYönetimSistemleri.Controllers
 
                 Session["UserEmail"] = login.Email.ToString();
 
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("Index", "UserPanel");
             }
             else
             {
@@ -39,16 +39,17 @@ namespace FaturaYönetimSistemleri.Controllers
         }
 
         [HttpPost]
-        public ActionResult AdminLogin(User user)
+        public ActionResult AdminLogin(Admin admin)
         {
-            var login = c.Users.FirstOrDefault(x => x.Email == user.Email && x.Password == user.Password);
+            var login = c.Admins.FirstOrDefault(x => x.UserName == admin.UserName && x.Password == admin.Password);
+
             if (login != null)
             {
-                FormsAuthentication.SetAuthCookie(login.Email, false);
+                FormsAuthentication.SetAuthCookie(login.UserName, false);
 
-                Session["UserEmail"] = login.Email.ToString();
+                Session["UserName"] = login.UserName.ToString();
 
-                return RedirectToAction("Index", "User");
+                return RedirectToAction("Index", "istatistik");
             }
             else
             {

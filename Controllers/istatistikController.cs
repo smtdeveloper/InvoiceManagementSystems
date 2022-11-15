@@ -31,8 +31,11 @@ namespace FaturaYönetimSistemleri.Controllers
             ViewBag.ElectricityBills = ElectricityBills;
 
 
+            var values = c.Todos.Where(x => x.IsDelete == false).ToList();
 
-            return View();
+            return View(values);
+
+          
         }
     }
 }

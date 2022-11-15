@@ -318,7 +318,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\NaturalGasBillController.cs" />
+    <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserPanelController.cs" />
     <Compile Include="Controllers\WaterBillController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -330,6 +332,7 @@
     <Compile Include="Models\Entities\Dues.cs" />
     <Compile Include="Models\Entities\ElectricityBill.cs" />
     <Compile Include="Models\Entities\NaturalGasBill.cs" />
+    <Compile Include="Models\Entities\Todo.cs" />
     <Compile Include="Models\Entities\User.cs" />
     <Compile Include="Models\Entities\WaterBill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -862,6 +865,10 @@
     <Content Include="userTema\scss\_pages.scss" />
     <Content Include="userTema\scss\_subscribe.scss" />
     <Content Include="userTema\scss\_variables.scss" />
+    <Content Include="Views\Todo\Index.cshtml" />
+    <Content Include="Views\Todo\TodoAdd.cshtml" />
+    <Content Include="Views\Todo\TodoUpdate.cshtml" />
+    <Content Include="Views\UserPanel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
