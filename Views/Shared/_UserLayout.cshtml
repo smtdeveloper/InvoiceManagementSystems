@@ -51,17 +51,35 @@
     <!-- Navigation Bar-->
     <header id="topnav" class="defaultscroll scroll-active">
         <nav class="navbar navbar-dark bg-dark justify-content-between">
-            <a href="#" class="navbar-brand"> SMT KONUTLARI </a>
+
+            <a href="/UserPanel/Index" class="navbar-brand"> SMT KONUTLARI </a>
+            <a href="/UserElectricityBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Elektrik Fatularım  </a>
+            <a href="/UserWaterBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Su Fatularım  </a>
+            <a href="/UserNaturalGasBill/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Doğal Gaz Fatularım  </a>
+            <a href="/UserDues/Index" class="navbar-brand btn btn-toolbar hover  bg-dark  text-white"> Aidatlarım  </a>
+            <a href="/UserContact/Index" class="navbar-brand btn btn-primary-outline  text-white"> İletişim  </a>
+            <a href="#" class="">   </a>
+
+
+            <a href="#" class="">   </a>
+            <a href="#" class="">   </a>
+            <a href="#" class="">   </a>
+
+
+
+
 
 
             <form class="form-inline">
 
                 @*<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">*@
 
-                <button class="btn btn-outline-danger my-2 my-sm-0 m-2 p-2 pl-4 pr-4" type="submit"> Cıkış Yap </button>
-                <button class="btn btn-primary my-2 my-sm-0 m-2 p-2 pl-4 pr-4" type="submit">  <i class="mdi mdi-account d-inline-block rounded-pill"></i> Profil  </button>
 
-               
+
+                <a href="/UserProfil/Index" class="btn btn-warning my-2 my-sm-0 m-2 p-2 pl-4 pr-4" type="submit">  <i class="mdi mdi-account d-inline-block rounded-pill"></i> Profil</a>
+
+                <a href="/Home/Index" class="btn btn-outline-danger my-2 my-sm-0 m-2 p-2 pl-4 pr-4"> Cıkış Yap </a>
+
             </form>
         </nav>
     </header><!--end header-->
@@ -80,37 +98,44 @@
     <!-- subscribe end -->
     <!-- footer start -->
 
-    <footer class="text-center text-white" style="background-color: #45637d;">
-        <!-- Grid container -->
-        <div class="container p-4">
-            <!-- Section: Iframe -->
-            <section class="">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="ratio ratio-16x9">
+<footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <hr />
+        <br />
+        <!-- Section: Social media -->
+        <section class="mb-4">
+           
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
 
-                            <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/_5WIlj5sb1o"
-                                    title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-                                        picture-in-picture" allowfullscreen>
-                            </iframe>
+          
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
 
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Section: Iframe -->
-        </div>
-        <!-- Grid container -->
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+          
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class="fab fa-github"></i>
+            </a>
+        </section>
+        <hr />
+        <!-- Section: Social media -->
+    </div>
+
+    
+
+
+    <!-- Grid container -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 SMTcoder :
+
+        <a class="text-white" href="https://mdbootstrap.com/"> Konutları</a>
+    </div>
+    <!-- Copyright -->
+</footer>
 
 
     <!-- Back to top -->

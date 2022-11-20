@@ -319,8 +319,14 @@
     <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\NaturalGasBillController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
+    <Compile Include="Controllers\UserContactController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserDuesController.cs" />
+    <Compile Include="Controllers\UserElectricityBillController.cs" />
+    <Compile Include="Controllers\UserNaturalGasBillController.cs" />
     <Compile Include="Controllers\UserPanelController.cs" />
+    <Compile Include="Controllers\UserProfilController.cs" />
+    <Compile Include="Controllers\UserWaterBillController.cs" />
     <Compile Include="Controllers\WaterBillController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -645,6 +651,7 @@
     <Content Include="userTema\images\employers\img-7.jpg" />
     <Content Include="userTema\images\employers\img-8.jpg" />
     <Content Include="userTema\images\employers\img-9.jpg" />
+    <Content Include="userTema\images\ev.jpg" />
     <Content Include="userTema\images\favicon.ico" />
     <Content Include="userTema\images\featured-job\img-1.png" />
     <Content Include="userTema\images\featured-job\img-10.png" />
@@ -869,6 +876,16 @@
     <Content Include="Views\Todo\TodoAdd.cshtml" />
     <Content Include="Views\Todo\TodoUpdate.cshtml" />
     <Content Include="Views\UserPanel\Index.cshtml" />
+    <Content Include="Views\UserElectricityBill\Index.cshtml" />
+    <Content Include="Views\UserElectricityBill\Payment.cshtml" />
+    <Content Include="Views\UserWaterBill\Index.cshtml" />
+    <Content Include="Views\UserWaterBill\Payment.cshtml" />
+    <Content Include="Views\UserNaturalGasBill\Index.cshtml" />
+    <Content Include="Views\UserNaturalGasBill\Payment.cshtml" />
+    <Content Include="Views\UserDues\Index.cshtml" />
+    <Content Include="Views\UserDues\Payment.cshtml" />
+    <Content Include="Views\UserProfil\Index.cshtml" />
+    <Content Include="Views\UserContact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

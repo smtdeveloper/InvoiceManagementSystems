@@ -4,34 +4,34 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<section class="bg-home">
+
+
+
+<section class="bg-home bg-info">
 
     <div class="bg-overlay"></div>
     <div class="home-center">
 
         <div class="home-desc-center">
             <div class="container">
+                
 
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
-
+                        
                         <div class="title-heading text-center text-white">
-                            <img height="500" width="500" src="~/userTema/images/home.png" />
-                            <img src="~/userTema/images/smt.png" />
-                            <h6 class="small-title text-uppercase text-light mb-3"> SMT konut Kullanıcı Paneli  </h6>
+                            <img height="350" width="350" src="~/userTema/images/home.png" />
+
+                            <div>
+                                <img src="~/userTema/images/smt.png" />
+                            </div>
+
+
                             <h1 class="heading font-weight-bold mb-4">Fatura Ödeme Sistemi</h1>
                         </div>
                     </div>
                 </div>
-                <div class="home-form-position">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="home-registration-form p-4 mb-3">
-                                <h3 class="text-center text-white-50"> KÜTAHYA / Akkent Mh. </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -49,20 +49,20 @@
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                <a href="javascript:void(0)">
+                <a href="/UserElectricityBill/Index">
                     <div class="popu-category-box bg-light rounded text-center p-4">
                         <div class="popu-category-icon mb-3">
                             <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
                         </div>
                         <div class="popu-category-content">
                             <h5 class="mb-2 text-dark title">Elektrik Faturalarım</h5>
-                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2"  >  Hemen ÖDE </B>  </p>
+                            <p class="text-success m-2 rounded"> <B class="bg-white p-2 m-2">  Hemen ÖDE </B>  </p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                <a href="javascript:void(0)">
+                <a href="/UserWaterBill/Index">
                     <div class="popu-category-box bg-light rounded text-center p-4">
                         <div class="popu-category-icon mb-3">
                             <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
@@ -75,7 +75,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                <a href="javascript:void(0)">
+                <a href="/UserNaturalGasBill/Index">
                     <div class="popu-category-box bg-light rounded text-center p-4">
                         <div class="popu-category-icon mb-3">
                             <i class="mdi mdi-desktop-classic d-inline-block rounded-pill h3 text-primary"></i>
@@ -88,7 +88,7 @@
                 </a>
             </div>
             <div class="col-lg-3 col-md-6 mt-4 pt-2">
-                <a href="javascript:void(0)">
+                <a href="/UserDues/Index">
                     <div class="popu-category-box bg-light rounded text-center p-4">
                         <div class="popu-category-icon mb-3">
                             <i class="mdi mdi-office-building d-inline-block rounded-pill h3 text-primary"></i>
@@ -105,7 +105,7 @@
 
         <div class="row justify-content-center">
             <div class="col-12 text-center mt-4 pt-2">
-                <a href="javascript:void(0)" class="btn btn-primary-outline">  Bizimle iletişime Geçin   <i class="mdi mdi-chevron-right"></i></a>
+                <a href="/UserContact/Index" class="btn btn-primary-outline">  Bizimle iletişime Geçin   <i class="mdi mdi-chevron-right"></i></a>
             </div>
         </div>
     </div>
@@ -158,7 +158,187 @@
             <hr />
 
         </div>
-        
+
     </div>
 </section>
 <!-- counter end -->
+<!-- FAQ START -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="faq-content">
+                    <h4 class="text-dark">General Questions :</h4>
+                    <div class="faq-content mt-3">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapseOne" class="faq position-relative" aria-expanded="true" aria-controls="collapseOne">
+                                    <div class="card-header bg-light p-3" id="headingOne">
+                                        <h4 class="title mb-0 faq-question"> Ut feugiat eleifend metus ?</h4>
+                                    </div>
+                                </a>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapseTwo" class="faq position-relative collapsed" aria-expanded="false" aria-controls="collapseTwo">
+                                    <div class="card-header bg-light p-3" id="headingTwo">
+                                        <h4 class="title mb-0 faq-question"> Vitae sapien libero faucibus ? </h4>
+                                    </div>
+                                </a>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapsethree" class="faq position-relative collapsed" aria-expanded="false" aria-controls="collapsethree">
+                                    <div class="card-header bg-light p-3" id="headingthree">
+                                        <h4 class="title mb-0 faq-question"> Feugiat viverra varius ? </h4>
+                                    </div>
+                                </a>
+                                <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapsefour" class="faq position-relative collapsed" aria-expanded="false" aria-controls="collapsefour">
+                                    <div class="card-header bg-light p-3" id="headingfour">
+                                        <h4 class="title mb-0 faq-question"> Tincidunt Cras a semper ? </h4>
+                                    </div>
+                                </a>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card rounded shadow mb-0">
+                                <a data-toggle="collapse" href="#collapsefive" class="faq position-relative collapsed" aria-expanded="false" aria-controls="collapsefive">
+                                    <div class="card-header bg-light p-3" id="headingfive">
+                                        <h4 class="title mb-0 faq-question"> Feugiat viverra varius ? </h4>
+                                    </div>
+                                </a>
+                                <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-content mt-5">
+                    <h4 class="text-dark">Career Faq :</h4>
+
+                    <div class="faq-content mt-3">
+                        <div class="accordion" id="accordionExample2">
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapsesix" class="faq collapsed position-relative" aria-expanded="true" aria-controls="collapsesix">
+                                    <div class="card-header bg-light p-3" id="headingsix">
+                                        <h6 class="title mb-0 faq-question">Quisque condimentum tempor ?</h6>
+                                    </div>
+                                </a>
+                                <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample2">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse one end -->
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapsesevan" class="faq collapsed position-relative" aria-expanded="false" aria-controls="collapsesevan">
+                                    <div class="card-header bg-light p-3" id="headingsevan">
+                                        <h6 class="title mb-0 faq-question">Etiam us imperdiet orci ?</h6>
+                                    </div>
+                                </a>
+                                <div id="collapsesevan" class="collapse" aria-labelledby="headingsevan" data-parent="#accordionExample2">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse two end -->
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapseeight" class="faq collapsed position-relative" aria-expanded="false" aria-controls="collapseeight">
+                                    <div class="card-header bg-light p-3" id="headingeight">
+                                        <h6 class="title mb-0 faq-question">Sed posuere vulputate ?</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseeight" class="collapse" aria-labelledby="headingeight" data-parent="#accordionExample2">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse three end -->
+
+                            <div class="card border rounded shadow mb-3">
+                                <a data-toggle="collapse" href="#collapsenine" class="faq collapsed position-relative" aria-expanded="false" aria-controls="collapsenine">
+                                    <div class="card-header bg-light p-3" id="headingnine">
+                                        <h6 class="title mb-0 faq-question">Fusce at felis luctus ?</h6>
+                                    </div>
+                                </a>
+                                <div id="collapsenine" class="collapse" aria-labelledby="headingnine" data-parent="#accordionExample2">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- collapse four end -->
+
+                            <div class="card border rounded shadow mb-0">
+                                <a data-toggle="collapse" href="#collapseten" class="faq collapsed position-relative" aria-expanded="false" aria-controls="collapseten">
+                                    <div class="card-header bg-light p-3" id="headingten">
+                                        <h6 class="title mb-0 faq-question">Vestibulum a aliquam leo ?</h6>
+                                    </div>
+                                </a>
+                                <div id="collapseten" class="collapse" aria-labelledby="headingten" data-parent="#accordionExample2">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0 faq-ans">Temporibus autem quibusdam aut officiis debitis aut rerum necessitatibus saepe eveniet voluptates repudiandae sint et molestiae non recusandae that Itaque earum rerum sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis was doloribus asperiores repellat sed ut perspiciatis unde omnis iste natus error at accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FAQ END -->
+<div class="row">
+    <div class="col-lg-3 mt-4 pt-2 align-content-lg-center">
+
+    </div>
+    <div class="col-lg-6 mt-4 pt-2 align-content-lg-center">
+        <div class="component-wrapper rounded shadow">
+            <div class="p-4 border-bottom bg-light">
+                <h4 class="title mb-0"> Blockquotes </h4>
+            </div>
+
+            <div class="p-4">
+                <blockquote class="blockquote p-3">
+                    <p class="text-muted mb-0 font-italic">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 mt-4 pt-2 align-content-lg-center">
+
+    </div>
+</div>
+    <!--end col-->

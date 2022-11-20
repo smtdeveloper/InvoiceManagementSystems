@@ -1,0 +1,124 @@
+﻿@model FaturaYönetimSistemleri.Models.Entities.NaturalGasBill
+
+
+@{
+    ViewBag.Title = "Payment";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<ol class="breadcrumb mb-4">
+</ol>
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/UserPanel/Index">  Ana Sayfa </a>  /   <a href="/UserNaturalGasBill/Index">Doğal Gaz Fatularım </a>  /  Ödeme    </li>
+</ol>
+
+
+<br />
+
+
+@using (Html.BeginForm("Payment", "UserNaturalGasBill", FormMethod.Post))
+{
+
+    <br />
+    <div class="form-group">
+
+        <section class="p-4 p-md-5" style=" background-image: url(https://www.bcas.co.za/wp-content/uploads/2015/12/BCEA-PAyments.jpg);">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 col-lg-8 col-xl-5">
+                    <div class="card rounded-3">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <h3> Ödeme Ekranı </h3>
+                                <img height="150" width="150" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Aksa_Do%C4%9Falgaz_logo.svg" alt="" class="img-fluid mx-auto d-block">
+
+                                <h6>  Doğal Gaz Faturası </h6>
+                                <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                                <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
+                            </div>
+                            <form action="">
+                                <p class="fw-bold mb-4 pb-2">   </p>
+
+
+
+
+
+
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="formControlLgXsd"> Kart Üzerindeki İsim </label>
+                                    <input type="text" id="formControlLgXsd" class="form-control form-control-lg"
+                                           placeholder=" Kart Sahibi " />
+
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-7">
+                                        <div class="form-outline">
+                                            <input type="text" id="formControlLgXM" class="form-control form-control-lg"
+                                                   placeholder="Kartın ön yüzdeki 11 rakam" />
+                                            <label class="form-label" for="formControlLgXM">Kart Numarası</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-outline">
+                                            <input type="password" id="formControlLgExpk" class="form-control form-control-lg"
+                                                   placeholder="MM/YY" />
+                                            <label class="form-label" for="formControlLgExpk">Son Tarih</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <div class="form-outline">
+                                            <input type="password" id="formControlLgcvv" class="form-control form-control-lg"
+                                                   placeholder="Cvv" />
+                                            <label class="form-label" for="formControlLgcvv">Cvv</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <button class="btn btn-success btn-lg btn-block"> <B>  @Html.DisplayFor(x => x.NaturalGasBillPrice) ₺  </B>  Ödeme Yap</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+
+                    @Html.HiddenFor(x => x.NaturalGasBillID)
+                    @Html.HiddenFor(x => x.UserID)
+                    @Html.HiddenFor(x => x.NaturalGasBillSequenceNo)
+                    @Html.HiddenFor(x => x.NaturalGasBillSerialNumber)
+                    @Html.HiddenFor(x => x.NaturalGasBillCompanyName)
+                    @Html.HiddenFor(x => x.NaturalGasBillPrice)
+                    @Html.HiddenFor(x => x.NaturalGasBillDate)
+                    @Html.HiddenFor(x => x.NaturalGasBilllDescription)
+                    @Html.HiddenFor(x => x.NaturalGasBillStatus)
+
+                </tr>
+
+                <tr>
+                </tr>
+
+
+                <tr>
+                </tr>
+
+
+            </thead>
+        </table>
+
+
+
+
+
+    </div>
+}
+
+
+<br />
+<hr />
