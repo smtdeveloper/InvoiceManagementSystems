@@ -15,7 +15,7 @@
 
 @using (Html.BeginForm("ApartmentUpdate", "Apartment", FormMethod.Post))
 {
-    
+
     <br />
     <div class="form-group">
 
@@ -39,7 +39,7 @@
                         @Html.Label("Durumu")
                         @Html.CheckBoxFor(x => x.Status, new { @class = "form-control" })
                     </th>
-                    <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+                    <th scope="col"> <button onclick="Updated()" class="btn btn-success">Kaydet</button> </th>
                 </tr>
 
                 <tr>   </tr>
@@ -54,6 +54,30 @@
 
     </div>
 }
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    function Updated() {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı , Daire Güncellendi',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+
+    }
+
+ 
+
+
+</script>
 
 
 

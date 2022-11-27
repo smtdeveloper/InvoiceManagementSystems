@@ -94,7 +94,7 @@
                     </th>
 
                 </tr>
-                <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th> </tr>
+                <tr>  <th scope="col"> <button onclick="UpdatedUser()" class="btn btn-success">Kaydet</button> </th> </tr>
 
 
             </thead>
@@ -110,6 +110,20 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
+
+    function UpdatedUser() {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı , Kullanıcı Güncellendi',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+
+    }
+
     function deleteUser(id) {
         console.log(id)
         Swal.fire({
@@ -140,6 +154,8 @@
             }
         })
     }
+
+
 </script>
 
 
