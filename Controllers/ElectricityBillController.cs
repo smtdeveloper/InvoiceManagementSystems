@@ -4,6 +4,7 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -15,9 +16,9 @@ namespace FaturaYönetimSistemleri.Controllers
         Context c = new Context();
 
         // GET: ElectricityBill
-        public ActionResult Index(int page = 1)
+        public ActionResult Index()
         {
-            var values = c.ElectricityBills.ToList().ToPagedList(page, 20);
+            var values = c.ElectricityBills.ToList();
             return View(values);
         }
 
@@ -55,7 +56,9 @@ namespace FaturaYönetimSistemleri.Controllers
             c.ElectricityBills.Add(electricityBill);
             c.SaveChanges();
 
-            return RedirectToAction("Index");
+            Thread.Sleep(3000);
+
+            return RedirectToAction("ElectricityBillAdd");
 
         }
 

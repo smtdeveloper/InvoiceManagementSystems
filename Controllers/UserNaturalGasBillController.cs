@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
+    [Authorize]
     public class UserNaturalGasBillController : Controller
     {
         Context c = new Context();

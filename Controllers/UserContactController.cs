@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
+    [Authorize]
     public class UserContactController : Controller
     {
         // GET: UserContact
