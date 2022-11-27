@@ -69,6 +69,7 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+        [HttpPost]
         public ActionResult ApartmentClear(int id)
         {
             var value = c.Apartments.Find(id);

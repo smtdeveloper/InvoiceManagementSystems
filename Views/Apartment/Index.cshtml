@@ -25,9 +25,9 @@
 
         <div class="border-primary card l-bg-cherry col-lg-5 m-4 p-4">
             <div class="card-statistic-3 p-4">
-                
+
                 <div class="m-4">
-                    <div class="card-icon card-icon-large"> <h1 class="text-center" > <i class="fas fa-home"></i> <B class="">    @item.ApartmentBlock BLOK  </B> </h1>      </div>
+                    <div class="card-icon card-icon-large"> <h1 class="text-center"> <i class="fas fa-home"></i> <B class="">    @item.ApartmentBlock BLOK  </B> </h1>      </div>
                     <div class="card-icon card-icon-large  "><i class="fas fa-circle"></i> <B>    @item.HomeType </B>    </div>
                     <h5 class="card-title mb-0"> Kat :  @item.Floor</h5>
                     <h5 class="card-title mb-0"> Daire No :  @item.ApartmentNo</h5>
@@ -54,11 +54,11 @@
                         <a href="/Apartment/ApartmentUpdate/@item.ApartmentId" class="btn btn-warning"> Güncelle </a>
                         @if (item.Status == true)
                         {
-                            <a href="/Apartment/ApartmentClear/@item.ApartmentId" class="btn btn-outline-danger"> Daireyi Boşalt </a>
+                            <a href="#" onclick="ApartmentClear(@item.ApartmentId)" class="btn btn-outline-danger"> Kullanıcıyı Cıkart </a>
+                            
                         }
 
-
-
+                      
 
                     </div>
 
@@ -80,4 +80,52 @@
 
     </ul>
 </nav>
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script>
+
+        function ApartmentClear(id) {
+
+            console.log(" ApartmentClear calıstı ")
+
+            Swal.fire({
+                title: 'Emin misin ?',
+                text: "Kullanıcıyı Cıkartmak istediğine emin misin ? ",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet , Çıkart !',
+                cancelButtonText : ' Vazgeç ! '
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    Swal.fire(
+                        ' Başarılı !',
+                        'Kullanıcı Çıkartıldı.',
+                        'success'
+                    )
+
+                    $.ajax({
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "post",
+                        url: "/Apartment/ApartmentClear/" + id
+
+                    });
+
+                    location.reload();
+
+
+                }
+            })
+
+        }
+
+
+
+    </script>
 
