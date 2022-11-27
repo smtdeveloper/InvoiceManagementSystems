@@ -3,9 +3,13 @@ using FaturaYönetimSistemleri.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace FaturaYönetimSistemleri.Controllers
 {
@@ -18,6 +22,8 @@ namespace FaturaYönetimSistemleri.Controllers
         {
             return View();
         }
+
+
 
         [HttpPost]
         public ActionResult UserLogin(User user)
@@ -35,7 +41,7 @@ namespace FaturaYönetimSistemleri.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-          
+
         }
 
         [HttpPost]
@@ -56,6 +62,57 @@ namespace FaturaYönetimSistemleri.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
+        }
+
+        [HttpGet]
+        public ActionResult PasswordForgot()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult PasswordForgot(string Email)
+        {
+            var user = c.Users.Where(x => x.Email == Email).SingleOrDefault(); // Kullanıcıyı aldık
+
+            if (user != null) // Kullanıcı varsa if calısacak
+            {
+                Guid randomkey = Guid.NewGuid(); // 32 karakterli kodu ürettik
+
+                user.Password = randomkey.ToString().Substring(0, 5); /// Keyi ekleyip veritabanına ekledik
+
+                c.SaveChanges(); // Veritabanına kaydettik
+
+
+                MailAddress from = new MailAddress("TestMail@gmail.com");
+                MailAddress to = new MailAddress(user.Email);// Kullanıcının mailini yazdık
+                MailMessage msg = new MailMessage(from, to);
+                msg.IsBodyHtml = true;
+                msg.Subject = "Şifre Sıfırlama";
+                msg.Body += "<h2>  Merhaba " + user.Email
+                    + " Şifre Degiştirme İsteğiniz Alınmıştır.  Kodunuz : "
+                    + randomkey.ToString().Substring(0, 5) // Substring ile random keyimizi 5 karatere düşdük
+                    + "Sitemize girerek profilden şifrenizi güncelleyiniz ! </h2>  </br>  ";
+
+
+                SmtpClient client = new SmtpClient();
+                client.Port = 587;
+                client.Host = "smtp.gmail.com";
+                client.EnableSsl = true;
+                client.Timeout = 10000;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential("TestMail@gmail.com", "123");
+                client.Send(msg); // Maili gönderdik.
+
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.EmailNotFind = "Email kayıtlı değil ! ";
+                return RedirectToAction("PasswordForgot", "Home");
+            }
         }
 
 
