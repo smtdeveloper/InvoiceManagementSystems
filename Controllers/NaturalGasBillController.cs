@@ -16,6 +16,13 @@ namespace FaturaYönetimSistemleri.Controllers
 
         Context c = new Context();
 
+        public ActionResult NaturalGasBillPDF()
+        {
+            var values = c.NaturalGasBills.ToList();
+            return View(values);
+
+        }
+
         // GET: NaturalGasBill
         public ActionResult Index(int page = 1)
         {

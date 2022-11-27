@@ -16,6 +16,14 @@ namespace FaturaYönetimSistemleri.Controllers
         // GET: WaterBill
         Context c = new Context();
 
+        public ActionResult WaterBillPDF()
+        {
+            var values = c.WaterBills.ToList();
+            return View(values);
+
+        }
+
+
         public ActionResult Index(int page = 1)
         {
             var values = c.WaterBills.ToList().ToPagedList(page, 20);

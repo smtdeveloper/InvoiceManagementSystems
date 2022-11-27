@@ -850,6 +850,9 @@
     <Content Include="Views\UserDues\Payment.cshtml" />
     <Content Include="Views\UserProfil\Index.cshtml" />
     <Content Include="Views\UserContact\Index.cshtml" />
+    <Content Include="Views\ElectricityBill\ElectricityBillPDF.cshtml" />
+    <Content Include="Views\NaturalGasBill\NaturalGasBillPDF.cshtml" />
+    <Content Include="Views\WaterBill\WaterBillPDF.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

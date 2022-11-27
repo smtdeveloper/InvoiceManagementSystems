@@ -15,6 +15,13 @@ namespace FaturaYönetimSistemleri.Controllers
     {
         Context c = new Context();
 
+        public ActionResult ElectricityBillPDF()
+        {
+            var values = c.ElectricityBills.ToList();
+            return View(values);
+
+        }
+
         // GET: ElectricityBill
         public ActionResult Index()
         {
