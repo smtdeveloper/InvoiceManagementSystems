@@ -13,7 +13,7 @@
 
 <br />
 
-@using (Html.BeginForm("UserAdd", "User", FormMethod.Post))
+@using (Html.BeginForm("UserAdd", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <br />
     <table class="table table-borderless">
@@ -64,8 +64,7 @@
             </tr>
             <tr>
                 <th scope="col">
-                    @Html.Label("Resim Yolu")
-                    @Html.TextBoxFor(x => x.ImageURL, new { @class = "form-control" })
+                    <input type="file" name="ImageURL" />
                 </th>
                 <th scope="col">
                     @Html.Label("Arac Plakası")

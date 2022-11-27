@@ -1,6 +1,7 @@
 ﻿using FaturaYönetimSistemleri.Models.DB;
 using FaturaYönetimSistemleri.Models.Entities;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -49,6 +50,15 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpPost]
         public ActionResult UserAdd(User user)
         {
+
+            if (Request.Files.Count > 0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                string fileExtension = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Image/" + fileName + fileExtension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                user.ImageURL = "/Image/" + fileName + fileExtension;
+            }
 
             c.Users.Add(user);
             c.SaveChanges();
@@ -119,6 +129,15 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpPost]
         public ActionResult UserUpdated(User user)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                string fileExtension = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Image/" + fileName + fileExtension;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                user.ImageURL = "/Image/" + fileName + fileExtension;
+            }
+
             var value = c.Users.Find(user.UserId);
 
             value.FirstName = user.FirstName;
