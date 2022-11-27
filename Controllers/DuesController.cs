@@ -4,6 +4,7 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -84,7 +85,9 @@ namespace FaturaYönetimSistemleri.Controllers
             c.Dues.Add(dues);
             c.SaveChanges();
 
-            return RedirectToAction("Index");
+            Thread.Sleep(3000);
+
+            return RedirectToAction("DuesAdd");
 
         }
 

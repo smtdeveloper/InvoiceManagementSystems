@@ -50,18 +50,17 @@
                     @Html.Label("Acıklama")
                     @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
                 </th>
-                
+
                 <th scope="col">
                     @Html.Label("Kullanıcılar")
                     @Html.DropDownListFor(x => x.UserID, (List<SelectListItem>)ViewBag.VUsers, new { @class = "form-control" })
                 </th>
             </tr>
             <tr>
-                
             </tr>
-           
-         
-            <tr>  <th scope="col"> <button class="btn btn-success">Kaydet</button> </th> </tr>
+
+
+            <tr>  <th scope="col"> <button onclick="Added" class="btn btn-success"> Ekle </button> </th> </tr>
 
 
         </thead>
@@ -71,3 +70,21 @@
 
 }
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    function Added() {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı , Aidat Eklendi. ',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+
+    }
+
+</script>

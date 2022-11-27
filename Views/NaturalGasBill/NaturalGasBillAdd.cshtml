@@ -71,7 +71,7 @@
                     @Html.Label("Şirket Adı ")
                     @Html.TextBoxFor(x => x.NaturalGasBillCompanyName, new { @class = "form-control" })
                 </th>
-                <th scope="col"> <button class="btn btn-success">Kaydet</button> </th>
+                <th scope="col"> <button onclick="Added()" class="btn btn-success"> Ekle </button> </th>
             </tr>
 
 
@@ -84,3 +84,22 @@
 
 
 }
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    function Added() {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı , Doğal Gaz Faturası Eklendi. ',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+
+    }
+
+</script>
