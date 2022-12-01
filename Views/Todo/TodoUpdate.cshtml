@@ -21,13 +21,7 @@
 
 
                 <tr>
-                    <th>
-                        <h6> Yapıldı </h6>
-                        @Html.CheckBoxFor(x => x.Status, new { @class = "form-control border-0 btn-transition btn btn-outline-success" })
 
-
-
-                    </th>
                     <th scope="col">
 
 
@@ -35,6 +29,13 @@
                         @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
                         @Html.HiddenFor(x => x.IsDelete)
                         @Html.HiddenFor(x => x.ID)
+
+                    </th>
+                    <th>
+                        <h6> Yapıldı </h6>
+                        @Html.CheckBoxFor(x => x.Status, new { @class = "form-control border-0 btn-transition btn btn-outline-success" })
+
+
 
                     </th>
                     <th scope="col">
