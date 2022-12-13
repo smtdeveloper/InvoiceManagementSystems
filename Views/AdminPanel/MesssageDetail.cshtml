@@ -1,0 +1,152 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<Message>
+
+@{
+    ViewBag.Title = "MesssageDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+
+
+
+
+
+<section class="content">
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+
+
+            <!-- /.col -->
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12 m-2">
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-header">
+
+                            <h3 class="card-title p-4">Mesajı Detayı</h3>
+
+
+
+                        </div>
+
+                        <!-- /.card-header -->
+
+                        <div class="card-body p-0">
+
+                            <div class="mailbox-read-info">
+
+                                <h5 class="m-2"> Konu : @item.Title  </h5>
+
+                                <h6>
+
+                                    Gönderen : @item.Sender
+
+                                    <span class="mailbox-read-time float-right">  Tarih : @item.Date  </span>
+
+                                </h6>
+
+                            </div>
+
+                            <!-- /.mailbox-read-info -->
+
+                            <div class="mailbox-controls with-border text-center">
+
+                                <div class="btn-group">
+
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Delete">
+
+                                        <i class="far fa-trash-alt"></i>
+
+                                    </button>
+
+
+
+                                </div>
+
+                                <!-- /.btn-group -->
+
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Print">
+
+                                    <i class="fas fa-print"></i>
+
+                                </button>
+
+                            </div>
+
+                            <!-- /.mailbox-controls -->
+
+                            <div class="mailbox-read-message">
+
+
+
+                                <p class="p-4 m-2">
+
+                                    @item.Comment
+
+                                </p>
+
+
+
+
+
+                            </div>
+
+                            <!-- /.mailbox-read-message -->
+
+                        </div>
+
+                        <!-- /.card-body -->
+                        <!-- /.card-footer -->
+
+                        <div class="card-footer">
+
+                            <div class="float-right">
+
+
+
+                                <a href="/AdminPanel/NewMessage" class="btn btn-default"> <i class="fas fa-share"></i> Cevapla </a>
+
+                            </div>
+
+                            <button type="button" class="btn btn-default"><i class="far fa-trash-alt"></i> Sil</button>
+
+                            <button type="button" class="btn btn-default"><i class="fas fa-print"></i> Yazdır</button>
+
+                        </div>
+
+                        <!-- /.card-footer -->
+
+                    </div>
+
+                    <!-- /.card -->
+
+                </div>
+            }
+
+
+            <!-- /.col -->
+
+        </div>
+
+        <!-- /.row -->
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+

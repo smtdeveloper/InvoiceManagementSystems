@@ -37,5 +37,9 @@ namespace FaturaYönetimSistemleri.Controllers
 
           
         }
+
+
+
+
     }
 }

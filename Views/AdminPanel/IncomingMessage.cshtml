@@ -1,0 +1,255 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<Message>
+
+@{
+    ViewBag.Title = "IncomingMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<style>
+    body {
+        background: #edf1f5;
+        margin-top: 20px;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 0 solid transparent;
+        border-radius: 0;
+    }
+
+    .mailbox-widget .custom-tab .nav-item .nav-link {
+        border: 0;
+        color: #fff;
+        border-bottom: 3px solid transparent;
+    }
+
+        .mailbox-widget .custom-tab .nav-item .nav-link.active {
+            background: 0 0;
+            color: #fff;
+            border-bottom: 3px solid #2cd07e;
+        }
+
+    .no-wrap td, .no-wrap th {
+        white-space: nowrap;
+    }
+
+    .table td, .table th {
+        padding: .9375rem .4rem;
+        vertical-align: top;
+        border-top: 1px solid rgba(120,130,140,.13);
+    }
+
+    .font-light {
+        font-weight: 300;
+    }
+</style>
+
+
+
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div class="">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body bg-primary text-white mailbox-widget pb-0">
+
+                    <ul class="nav nav-tabs custom-tab border-bottom-0 mt-4" id="myTab" role="tablist">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/AdminPanel/IncomingMessage">
+
+                                <span class="d-none d-md-block"> Gelen Mesajlarım</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/AdminPanel/OutgoingMessage">
+
+                                <span class="d-none d-md-block"> Gönderdiğim Mesajlarım</span>
+                            </a>
+                        </li>
+
+
+
+
+
+
+
+                    </ul>
+                </div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade active show" id="inbox" aria-labelledby="inbox-tab" role="tabpanel">
+                        <div>
+                            <div class="row p-4 no-gutters align-items-center">
+                                <div class="col-sm-12 col-md-6">
+                                    <h3 class="font-light mb-0"><i class="ti-email mr-2"></i> Gelen  Mesajlarım ! </h3>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <ul class="list-inline dl mb-0 float-left float-md-right">
+                                        <li class="list-inline-item text-info mr-3">
+                                            <a href="/UserPanel/NewMessage">
+                                                <a class="btn btn-circle btn-success text-white" href="/AdminPanel/NewMessage">
+                                                    <i class="fa fa-plus"></i>
+                                                    <span class="ml-2 font-normal text-white"> <b> Yeni Mesaj Yaz </b> </span>
+                                                </a>
+
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Mail list-->
+                            <div class="table-responsive m-4">
+                                <table class="table email-table no-wrap table-hover v-middle mb-0 font-14">
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <!-- row -->
+                                            <tr>
+                                                <td class="pl-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <h6> # @item.ID </h6>
+                                                    </div>
+                                                </td>
+                                                <!-- label -->
+                                                <td class="pl-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <a class="link" href="/AdminPanel/MesssageDetail/@item.ID">
+                                                            Mesajı Oku
+
+                                                        </a>
+                                                    </div>
+                                                </td>
+
+                                                <td class="pl-3">
+                                                    <div class="custom-control custom-checkbox">
+                                                        <h6>  @item.Sender </h6>
+                                                    </div>
+                                                </td>
+                                                <!-- star -->
+                                                <!-- Message -->
+                                                <td>
+                                                    <a class="link" href="/AdminPanel/MesssageDetail/@item.ID">
+                                                        <span class="badge badge-pill text-white font-medium bg-warning mr-2">  @item.Title  </span>
+
+                                                    </a>
+                                                </td>
+                                                <!-- Attachment -->
+                                                @*<td>
+                                                        @if (item.Status)
+                                                        {
+                                                            <small class="badge badge-success"> YAPILDI  <i class="fas fa-check"></i> </small>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <small class="badge badge-warning">  <i class="far fa-clock"></i>  - </small>
+                                                        }
+                                                    </td>*@
+                                                <!-- Time -->
+                                                <td class="text-muted"> @item.Date </td>
+                                                <td>
+                                                    <a href="#">
+                                                        <button onclick="deleteMessage(@item.ID)" class="btn btn-circle btn-danger text-white" href="javascript:void(0)">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <!-- row -->
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="sent" aria-labelledby="sent-tab" role="tabpanel">
+                        <div class="row p-3 text-dark">
+                            <div class="col-md-6">
+                                <h3 class="font-light">Lets check profile</h3>
+                                <h4 class="font-light">you can use it with the small code</h4>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="spam" aria-labelledby="spam-tab" role="tabpanel">
+                        <div class="row p-3 text-dark">
+                            <div class="col-md-6">
+                                <h3 class="font-light">Come on you have a lot message</h3>
+                                <h4 class="font-light">you can use it with the small code</h4>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="delete" aria-labelledby="delete-tab" role="tabpanel">
+                        <div class="row p-3 text-dark">
+                            <div class="col-md-6">
+                                <h3 class="font-light">Just do Settings</h3>
+                                <h4 class="font-light">you can use it with the small code</h4>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        function deleteMessage(id) {
+            console.log(id)
+            Swal.fire({
+                title: 'Emin misiniz !',
+                text: "Silmek istediğinize emin misiniz ?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Evet, SİL',
+                cancelButtonText: "Vazgeç",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        type: "post",
+                        url: "/AdminPanel/MessageSoftDelete/" + id,
+                        success: function (func) {
+                            Swal.fire(
+                                'SİLİNDİ ! ',
+                                'Mesaj başarılı bir şekilde silindi.',
+                                'success'
+                            )
+                            setTimeout('', 3000);
+                            location.reload();
+                        }
+                    }
+                    )
+                }
+            })
+        }
+</script>

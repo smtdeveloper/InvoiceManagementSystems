@@ -1,6 +1,7 @@
-﻿
+﻿@model FaturaYönetimSistemleri.Models.Entities.Message
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "NewMessage";
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
@@ -25,26 +26,13 @@
 </section>
 <!-- end home -->
 <!-- MAP START -->
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 p-0">
-                <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" style="border: 0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-  
-
 <!-- CONTACT END -->
 <!-- CONTACT FORM START -->
 <section class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-               
+
             </div>
         </div>
 
@@ -52,25 +40,26 @@
             <div class="col-lg-8 col-md-7 mt-4 pt-2">
                 <div class="custom-form rounded border p-4">
                     <div id="message"></div>
-                    <form method="post" action="php/contact.php" name="contact-form" id="contact-form">
+                    <form class="form-group" method="post">
                         <div class="row">
-                            
+
                             <div class="col-lg-12">
                                 <div class="form-group app-label">
                                     <label class="text-muted">Konu</label>
-                                    <input type="text" class="form-control resume" id="subject" placeholder="konu..">
+                                    <input type="text" class="form-control resume" id="subject" name="Title" placeholder="konu..">
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group app-label">
                                     <label class="text-muted">Mesajınız</label>
-                                    <textarea name="comments" id="comments" rows="5" class="form-control resume" placeholder="mesajınızı yazın.."></textarea>
+                                    <textarea id="comments" rows="5" class="form-control resume" name="Comment" placeholder="mesajınızı yazın.."></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
-                                <input type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Gönder">
+                                <input onclick="MailSend()" type="submit" id="submit" name="send" class="submitBnt btn btn-primary" value="Gönder">
+                              
                                 <div id="simple-msg"></div>
                             </div>
                         </div>
@@ -111,3 +100,30 @@
 </section>
 <!-- CONTACT FORM END -->
 
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 p-0">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6030.418742494061!2d-111.34563870463673!3d26.01036670629853!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1471908546569" style="border: 0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    function MailSend() {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı, Mail Gönderildi',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
+</script>

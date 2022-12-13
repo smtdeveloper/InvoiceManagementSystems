@@ -312,6 +312,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminPanelController.cs" />
     <Compile Include="Controllers\ApartmentController.cs" />
     <Compile Include="Controllers\DuesController.cs" />
     <Compile Include="Controllers\ElectricityBillController.cs" />
@@ -319,7 +320,6 @@
     <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\NaturalGasBillController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
-    <Compile Include="Controllers\UserContactController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserDuesController.cs" />
     <Compile Include="Controllers\UserElectricityBillController.cs" />
@@ -337,6 +337,7 @@
     <Compile Include="Models\Entities\Apartment.cs" />
     <Compile Include="Models\Entities\Dues.cs" />
     <Compile Include="Models\Entities\ElectricityBill.cs" />
+    <Compile Include="Models\Entities\MessageToAdmin.cs" />
     <Compile Include="Models\Entities\NaturalGasBill.cs" />
     <Compile Include="Models\Entities\Todo.cs" />
     <Compile Include="Models\Entities\User.cs" />
@@ -849,11 +850,18 @@
     <Content Include="Views\UserDues\Index.cshtml" />
     <Content Include="Views\UserDues\Payment.cshtml" />
     <Content Include="Views\UserProfil\Index.cshtml" />
-    <Content Include="Views\UserContact\Index.cshtml" />
     <Content Include="Views\ElectricityBill\ElectricityBillPDF.cshtml" />
     <Content Include="Views\NaturalGasBill\NaturalGasBillPDF.cshtml" />
     <Content Include="Views\WaterBill\WaterBillPDF.cshtml" />
     <Content Include="Views\Home\PasswordForgot.cshtml" />
+    <Content Include="Views\UserPanel\NewMessage.cshtml" />
+    <Content Include="Views\UserPanel\OutgoingMessage.cshtml" />
+    <Content Include="Views\UserPanel\IncomingMessage.cshtml" />
+    <Content Include="Views\UserPanel\MesssageDetail.cshtml" />
+    <Content Include="Views\AdminPanel\IncomingMessage.cshtml" />
+    <Content Include="Views\AdminPanel\OutgoingMessage.cshtml" />
+    <Content Include="Views\AdminPanel\MesssageDetail.cshtml" />
+    <Content Include="Views\AdminPanel\NewMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
