@@ -91,6 +91,8 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+
+
         public ActionResult DuesStatus(int id)
         {
             var value = c.Dues.Find(id);

@@ -60,6 +60,13 @@ namespace FaturaYönetimSistemleri.Controllers
 
         }
 
+        public ActionResult LogOut() 
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public ActionResult PasswordForgot()
         {
