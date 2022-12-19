@@ -1,0 +1,99 @@
+﻿@using FaturaYönetimSistemleri.Models.Entities
+@model List<User>
+
+@{
+    ViewBag.Title = "BulkAddDues";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active"> <a href="/Dues/Index">Aidatlar</a> / Toplu Aidat Ekle      </li>
+</ol>
+
+<br />
+@*<div class="text-left">
+        <a href="/Dues/Index" class="btn btn-primary p-3 m-4">  Aidat Listesine Dön </a>
+    </div>*@
+
+<form class="form-group" method="post">
+
+
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th scope="col">
+                    <p> Acıklama</p>
+                    <input name="Description" type="text" value="" />
+                </th>
+                <th scope="col">
+                    
+                </th>
+                <th scope="col">
+
+                    <label for="cars">Kullanıcılar</label>
+                    <div class="row p-2">
+                        @foreach (var item in Model)
+                        {
+
+                            <input type="checkbox" value="@item.UserId" /> <p class="m-2"> @item.FirstName @item.LastName </p>
+
+
+                        }
+                    </div>
+
+
+                </th>
+            </tr>
+
+            <tr>
+                <th scope="col">
+                    <p> Fiyat </p>
+                    <input name="Price" type="text" value="" />
+                </th>
+                <th scope="col">
+                    <p> Tarih </p>
+                    <input name="Date" type="datetime" value="" />
+                </th>
+            </tr>
+
+            <tr>
+
+                <th> </th>
+                <th> </th>
+                
+                <th> </th>
+            </tr>
+
+
+
+            <tr>  <th scope="col"> <button onclick="Added" class="btn btn-success"> Ekle </button> </th> </tr>
+
+
+        </thead>
+    </table>
+
+</form>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+
+    function Added() {
+
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Başarılı , Aidat Eklendi. ',
+            showConfirmButton: false,
+            timer: 2500
+        })
+
+
+    }
+
+</script>

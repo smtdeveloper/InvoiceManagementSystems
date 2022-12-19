@@ -35,7 +35,7 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpGet]
         public ActionResult UserAdd()
         {
-            List<SelectListItem> apartments = (from x in c.Apartments.ToList()
+            List<SelectListItem> apartments = (from x in c.Apartments.Where(x=> x.UserId == null).ToList()
                                                select new SelectListItem
                                                {
                                                    Text = x.ApartmentBlock + " BLOK " +  x.ApartmentNo + " Daire",

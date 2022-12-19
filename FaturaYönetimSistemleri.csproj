@@ -862,6 +862,7 @@
     <Content Include="Views\AdminPanel\OutgoingMessage.cshtml" />
     <Content Include="Views\AdminPanel\MesssageDetail.cshtml" />
     <Content Include="Views\AdminPanel\NewMessage.cshtml" />
+    <Content Include="Views\Dues\BulkAddDues.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

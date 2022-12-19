@@ -81,7 +81,7 @@ namespace FaturaYönetimSistemleri.Controllers
         [HttpPost]
         public ActionResult DuesAdd(Dues dues)
         {
-
+            
             c.Dues.Add(dues);
             c.SaveChanges();
 
@@ -90,6 +90,29 @@ namespace FaturaYönetimSistemleri.Controllers
             return RedirectToAction("DuesAdd");
 
         }
+
+        [HttpGet]
+        public ActionResult BulkAddDues()
+        {
+           
+            var values = c.Users.Where(x => x.IsDelete == false).ToList();
+            return View(values);
+
+        }
+
+        [HttpPost]
+        public ActionResult BulkAddDues(List<Dues> dues)
+        {
+            
+            c.Dues.AddRange(dues);
+            c.SaveChanges();
+
+            Thread.Sleep(3000);
+
+            return RedirectToAction("DuesAdd");
+
+        }
+
 
 
 
